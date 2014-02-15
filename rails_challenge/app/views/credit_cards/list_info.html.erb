@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="span4">
+      <h2 class="success_h2"> Success</h2>
+      <table class="table">
+        <%= render :partial => "heading_info" %>
+        <% @success.each do |credit_card| %>
+          <tr class="success">
+            <%= render :partial => "transaction_info" ,:locals => {:credit_card =>              credit_card } %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="span4">
+      <h2 class="disputed_h2">Disputed</h2>
+      <table class="table">
+        <%= render :partial => "heading_info" %>
+        <% @disputed.each do |credit_card| %>
+          <tr class="danger">
+            <%= render :partial => "transaction_info" ,:locals => {:credit_card =>              credit_card } %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="span4">
+      <h2 class="failed_h2">Failed</h2>
+      <table class="table">
+        <%= render :partial => "heading_info" %>
+        <% @failed.each do |credit_card| %>
+          <tr class="failed">
+            <%= render :partial => "transaction_info" ,:locals => {:credit_card =>              credit_card } %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
